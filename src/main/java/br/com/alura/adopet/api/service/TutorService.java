@@ -21,7 +21,7 @@ public class TutorService {
     private List<ValidacaoAtualizarTutor> validacoes;
 
     public void cadastrar(CadastroTutor tutorDto) {
-        boolean dadosJaCadastrados = repository.existsByEmailOrTelefone(tutorDto.email(), tutorDto.telefone())
+        boolean dadosJaCadastrados = repository.existsByEmailOrTelefone(tutorDto.email(), tutorDto.telefone());
 
         if (dadosJaCadastrados) {
             throw new ValidacaoException("Dados já cadastrados para outro tutor!");
